@@ -118,7 +118,7 @@ export const initializePath = () => {
 
             // If file doesn't exist then source .bash_profile instead
             if (!fileExists) {
-              sourceFile = '~/.bash_profile';
+              sourceFile = '.bash_profile';
             }
 
             // For users with a standard Node installation, node will be in
