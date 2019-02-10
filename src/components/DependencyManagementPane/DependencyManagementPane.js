@@ -30,7 +30,7 @@ type State = {
   addingNewDependency: boolean,
 };
 
-class DependencyManagementPane extends PureComponent<Props, State> {
+export class DependencyManagementPane extends PureComponent<Props, State> {
   state = {
     selectedDependencyIndex: 0,
     addingNewDependency: false,
@@ -216,13 +216,13 @@ const Wrapper = styled.div`
   max-height: 475px;
 `;
 
-const DependencyList = Card.extend`
+export const DependencyList = Card.extend`
   flex: 6;
   display: flex;
   flex-direction: column;
 `;
 
-const Dependencies = styled.div`
+export const Dependencies = styled.div`
   overflow: auto;
   /*
     flex-shrink is needed to ensure that the list doesn't clobber the
@@ -231,7 +231,7 @@ const Dependencies = styled.div`
   flex-shrink: 8;
 `;
 
-const DependencyButton = styled.button`
+export const DependencyButton = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -277,7 +277,7 @@ const DependencyButton = styled.button`
   }
 `;
 
-const AddDependencyButton = styled.button`
+export const AddDependencyButton = styled.button`
   width: 100%;
   height: 42px;
   padding: 8px 10px;
@@ -318,7 +318,7 @@ const DependencyVersion = styled.span`
       : COLORS.transparentBlack[400]}};
 `;
 
-const MainContent = Card.extend`
+export const MainContent = Card.extend`
   flex: 12;
   margin-left: 15px;
   padding: 0;
