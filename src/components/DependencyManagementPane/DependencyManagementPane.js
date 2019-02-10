@@ -19,7 +19,7 @@ import Spinner from '../Spinner';
 import OnlyOn from '../OnlyOn';
 import MountAfter from '../MountAfter';
 
-import type { Project } from '../../types';
+import type { Dependency, Project } from '../../types';
 
 type Props = {
   project: Project,
@@ -101,7 +101,7 @@ export class DependencyManagementPane extends PureComponent<Props, State> {
     this.setState({ addingNewDependency: false });
   };
 
-  renderListAddon = (dependency, isSelected) => {
+  renderListAddon = (dependency: Dependency, isSelected: boolean) => {
     if (
       dependency.status === 'installing' ||
       dependency.status.match(/^queued-/)
@@ -118,7 +118,7 @@ export class DependencyManagementPane extends PureComponent<Props, State> {
     );
   };
 
-  renderMainContents = (selectedDependency, projectId) => {
+  renderMainContents = (selectedDependency: Dependency, projectId: string) => {
     if (
       selectedDependency.status === 'installing' ||
       selectedDependency.status === 'queued-install'
